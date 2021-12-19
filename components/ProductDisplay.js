@@ -21,7 +21,7 @@ app.component('product-display', {
           Only <b>{{ inventory }}</b> left!</p>
         <p v-else>Out of Stock</p>
         <p> shipping: {{ shipping }}</p>
-        
+        <product-details :details="details"></product-details>
         <div 
           v-for="option in options" 
           :key="option.id"
@@ -62,6 +62,7 @@ app.component('product-display', {
         image: './assets/images/socks_green.jpg',
         inventory: 11,
         onSale: false,
+        details: ['50% cotton', '35% wool', '20% polyester'],
         options: [
             {id: 1, color: 'green', 
             image: './assets/images/socks_green.jpg',
