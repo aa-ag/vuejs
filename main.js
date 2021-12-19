@@ -3,6 +3,7 @@ const app = Vue.createApp({
         return {
             cart: 0,
             product: 'Socks',
+            brand: 'Warm&Comfy',
             image: './assets/images/socks_green.jpg',
             inventory: 11,
             onSale: false,
@@ -27,6 +28,11 @@ const app = Vue.createApp({
         }, 
         updateImage(optionImage) {
             this.image = optionImage
+        }
+    },
+    computed: {
+        title() {
+            return this.brand + ' ' + this.product
         }
     }
 })
