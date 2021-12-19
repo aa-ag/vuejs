@@ -13,7 +13,12 @@
       <div class="nav-bar"></div>
 
       <div class="cart">Cart({{ cart }})</div>
-      <product-display :prime="prime"></product-display>
+      <product-display 
+        :prime="prime"
+        :inventory="inventory"
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeFromCart">
+      </product-display>
       
     </div>
 

@@ -3,6 +3,10 @@ app.component('product-display', {
     prime: {
       type: Boolean,
       required: true
+    },
+    inventory: {
+      type: Number,
+      required: true
     }
   },
   template:
@@ -37,7 +41,11 @@ app.component('product-display', {
           :class="{ disabledButton: inventory === 0 }"
           >Add to Cart
         </button>
-        <button class="button" v-on:click="removeFromCart">Remove from Cart</button>
+        <button 
+          class="button" 
+          v-on:click="removeFromCart"
+          >Remove from Cart
+        </button>
         <button v-on:click="emptyCart">empty cart</button>
 
         <p style="color: rgba(126, 118, 118, 0.598); 
@@ -60,17 +68,14 @@ app.component('product-display', {
         product: 'Socks',
         brand: 'Warm&Comfy',
         image: './assets/images/socks_green.jpg',
-        inventory: 11,
         onSale: false,
         details: ['50% cotton', '35% wool', '20% polyester'],
         options: [
             {id: 1, color: 'green', 
             image: './assets/images/socks_green.jpg',
-            quantity: 50
             },
             {id: 2, color: 'blue', 
             image: './assets/images/socks_blue.jpg',
-            quantity: 0
             },
         ],
         url: 'http://aguerrevere.dev'
@@ -78,14 +83,10 @@ app.component('product-display', {
   },
   methods: {
       addToCart() {
-          this.cart += 1
-          this.inventory -= 1
+          this.$emit('add-to-cart')        
       },
       removeFromCart() {
-          if (this.cart > 0) {
-              this.cart -= 1
-              this.inventory += 1
-          }
+          this.$emit('remove-from-cart')
       },
       emptyCart() {
           this.inventory += this.cart
