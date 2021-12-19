@@ -34,9 +34,14 @@
               v-for="option in options" 
               :key="option.id"
               @mouseover="updateImage(option.image)"
-              >{{ option.color }}</div>
+              class="color-circle"
+              :style="{ backgroundColor: option.color }"
+              ></div>
             
-            <button class="button" v-on:click="addToCart">Add to Cart</button>
+            <button 
+              class="button" 
+              v-on:click="addToCart"
+              :disabled="inventory === 0">Add to Cart</button>
             <button class="button" v-on:click="removeFromCart">Remove from Cart</button>
 
             <p style="color: rgba(126, 118, 118, 0.598); 
