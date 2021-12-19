@@ -79,6 +79,7 @@ app.component('product-display', {
             image: './assets/images/socks_blue.jpg',
             },
         ],
+        reviews: [],
         url: 'http://aguerrevere.dev'
     }
   },
@@ -95,6 +96,9 @@ app.component('product-display', {
       updateImage(optionImage) {
           this.image = optionImage
       },
+      addReview(review) {
+        this.reviews.push(review)
+      }
   },
   computed: {
       title() {
