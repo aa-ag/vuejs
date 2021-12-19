@@ -13,5 +13,10 @@ const app = Vue.createApp({
             ],
             url: 'http://aguerrevere.dev'
         }
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1
+        }
     }
 })
