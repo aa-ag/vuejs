@@ -30,7 +30,11 @@
             <ul>
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
-            <div v-for="option in options">{{ option.color }}</div>
+            <div 
+              v-for="option in options" 
+              :key="option.id"
+              @mouseover="updateImage(option.image)"
+              >{{ option.color }}</div>
             
             <button class="button" v-on:click="addToCart">Add to Cart</button>
 
