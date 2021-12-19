@@ -31,9 +31,9 @@
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
             <div 
-              v-for="(option, index) in options" 
+              v-for="option in options" 
               :key="option.id"
-              @mouseover="updateOption(index)"
+              @mouseover="updateImage(option.image)"
               class="color-circle"
               :style="{ backgroundColor: option.color }"
               ></div>

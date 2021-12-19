@@ -4,7 +4,7 @@ const app = Vue.createApp({
             cart: 0,
             product: 'Socks',
             brand: 'Warm&Comfy',
-            selectedOption: 0,
+            image: './assets/images/socks_green.jpg',
             inventory: 11,
             onSale: false,
             details: ['50% cotton', '35% wool', '20% polyester'],
@@ -36,10 +36,13 @@ const app = Vue.createApp({
             this.inventory += this.cart
             this.cart = 0
         },
+        updateImage(optionImage) {
+            this.image = optionImage
+        },
     },
     computed: {
         title() {
             return this.brand + ' ' + this.product
-        },
+        }
     }
 })
