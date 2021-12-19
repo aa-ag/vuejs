@@ -17,5 +17,9 @@ const app = Vue.createApp({
                 this.inventory += 1
             }
         },
+        emptyCart() {
+            this.inventory += this.cart
+            this.cart = 0
+        }
     },
 })

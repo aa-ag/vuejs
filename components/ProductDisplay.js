@@ -89,8 +89,7 @@ app.component('product-display', {
           this.$emit('remove-from-cart')
       },
       emptyCart() {
-          this.inventory += this.cart
-          this.cart = 0
+          this.$emit('empty-cart')
       },
       updateImage(optionImage) {
           this.image = optionImage
