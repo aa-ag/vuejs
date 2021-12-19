@@ -41,7 +41,10 @@
             <button 
               class="button" 
               v-on:click="addToCart"
-              :disabled="inventory === 0">Add to Cart</button>
+              :disabled="inventory === 0"
+              :class="{ disabledButton: inventory === 0 }"
+              >Add to Cart
+            </button>
             <button class="button" v-on:click="removeFromCart">Remove from Cart</button>
 
             <p style="color: rgba(126, 118, 118, 0.598); 
