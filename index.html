@@ -32,7 +32,7 @@
             </ul>
             <div v-for="option in options">{{ option.color }}</div>
             
-            <button class="button">Add to Cart</button>
+            <button class="button" v-on:click="cart += 1">Add to Cart</button>
 
             <p style="color: rgba(126, 118, 118, 0.598); 
             font-size: x-small;
