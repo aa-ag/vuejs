@@ -21,7 +21,8 @@
             <h1>{{ product }}</h1>
             <p v-if="onSale">item is on sale!</p>
             <p v-if="inventory > 10">In Stock</p>
-            <p v-else-if="inventory <= 10 && inventory > 0">
+            <p v-else-if="inventory <= 10 && inventory > 0" 
+              style="color: rgb(255, 0, 0);">
               Only {{inventory}} left!</p>
             <p v-else>Out of Stock</p>
             <p style="color: rgba(126, 118, 118, 0.598); 
