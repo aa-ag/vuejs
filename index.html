@@ -22,7 +22,7 @@
           <div class="product-info">
             <h1>{{ title }}</h1>
             <p v-if="onSale">item is on sale!</p>
-            <p v-if="inStock">In Stock</p>
+            <p v-if="inventory > 10">In Stock</p>
             <p v-else-if="inventory <= 10 && inventory > 0" 
               style="color: rgba(255, 47, 0, 0.79);">
               Only <b>{{ inventory }}</b> left!</p>
@@ -41,11 +41,12 @@
             <button 
               class="button" 
               v-on:click="addToCart"
-              :disabled="!inStock"
-              :class="{ disabledButton: !inStock }"
+              :disabled="inventory === 0"
+              :class="{ disabledButton: inventory === 0 }"
               >Add to Cart
             </button>
             <button class="button" v-on:click="removeFromCart">Remove from Cart</button>
+            <button v-on:click="emptyCart">empty cart</button>
 
             <p style="color: rgba(126, 118, 118, 0.598); 
             font-size: x-small;
