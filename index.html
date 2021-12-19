@@ -9,10 +9,16 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
+    <div id="app">
+      <h1>{{ product }}</h1>
+    </div>
+
     <!-- Import App -->
     <script src="./main.js"></script>
 
-    <!-- Import Js -->
-    <script src="./main.js"></script>
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
   </body>
 </html>
