@@ -28,6 +28,12 @@ app.component('review-form', {
     },
     methods: {
         onSubmit() {
+            // basic form validation
+            if (this.name === '' || this.review === '' || this.rating === null) {
+                alert("Review must be complete: pls try again :)")
+                return
+            }
+
             let productReview = {
                 name: this.name,
                 review: this.review,
